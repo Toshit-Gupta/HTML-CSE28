@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .outer {
+      border: 6px solid red; 
+      background-color: rgba(255, 170, 0, 0.673);   /* colored margin effect */
+      padding: 20px;
+      display: inline-block;
+    }
+
+    .box {
+      position: relative;         /* required for ::before positioning */
+      width: 900px;
+      height: 300px;
+      margin: 20px;
+      padding: 15px;
+      border: 6px solid rgb(55, 0, 255);
+      background-color: lightyellow;
+      overflow: hidden;           /* keeps emblem inside box */
+    }
+
+    /* emblem layer in top-right corner */
+    .box::before{
+      content: "";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 120px;
+      height: 120px;
+      background: url('emblem.png') no-repeat center;
+      background-size: contain;
+      pointer-events: none;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    p, ul {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="outer">
+  <div class="box">
+    <h2>Preamble to the Constitution of India</h2>
+    
+    <p>
+      WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India <br> into a 
+      SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC<br> and to secure to all its citizens:
+    </p>
+    
+    <ul>
+      <li>JUSTICE, social, economic and political;</li>
+      <li>LIBERTY of thought, expression, belief, faith and worship;</li>
+      <li>EQUALITY of status and of opportunity;</li>
+      <li>And to promote among them all FRATERNITY assuring the dignity of the individual and the unity and integrity of the Nation;</li>
+    </ul>
+    
+    <p>
+      IN OUR CONSTITUENT ASSEMBLY this twenty-sixth day of November, 1949, do HEREBY ADOPT, ENACT AND GIVE TO OURSELVES THIS CONSTITUTION.
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
